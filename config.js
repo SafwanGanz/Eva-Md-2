@@ -50,6 +50,24 @@ global.APIKeys = { // APIKey Here
   'https://violetics.pw': '0b55-fada-712f'
 }
 
+global.util = require('util')
+global.fs = require('fs')
+global.fetch = require('node-fetch')
+global.chalk = require('chalk')
+global.os = require('os')
+global.moment = require('moment-timezone')
+global.axios = require('axios')
+global.cheerio = require('cheerio')
+global.scrape = require('./lib/scrape')
+global.xfr = require('xfarr-api')
+global.yzu = require('yuzzu-api')
+global.dhn = require('dhn-api')
+global.hxz = require('hxz-api')
+global.bts = require('@bochilteam/scraper')
+global.bs = require('@bochilteam/scraper')
+global.bochil = require('@bochilteam/scraper')
+global.baileys = require('@adiwajshing/baileys')
+
 //=========== Sticker WM =============//
 const spack = fs.readFileSync("lib/exif.json")
 const stickerpack = JSON.parse(spack)

@@ -4,7 +4,7 @@ const simple = require('./lib/simple')
 const printMessage = require('./lib/print.js')
 const util = require('util')
 const fs = require('fs')
-const fetch = require('node-fetch')
+const { default: fetch } = require('node-fetch')
 const chalk = require('chalk')
 const { flow } = require('lodash')
 
