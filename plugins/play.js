@@ -1,4 +1,5 @@
 const { youtubeSearch, youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
+const fetch = require('node-fetch')
 const { servers, yta } = require('../lib/y2mate')
 let handler = async (m, { conn, isOwner, isPrems, command, text, usedPrefix }) => {
     let lang = db.data.users[m.sender].language 
