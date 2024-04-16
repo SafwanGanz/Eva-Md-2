@@ -1,9 +1,16 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 require('./config')
+
 const {
-  useSingleFileAuthState,
-  DisconnectReason
-} = require('@whiskeysockets/baileys')
+	fetchLatestBaileysVersion,
+	makeInMemoryStore,
+	default: Baileys,
+	useMultiFileAuthState,
+	Browsers,
+	jidDecode,
+	DisconnectReason,
+	delay,
+} = require("@whiskeysockets/baileys");
 const { generate } = require('qrcode-terminal')
 const WebSocket = require('ws')
 const path = require('path')
@@ -66,16 +73,19 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-global.authFile = `${opts._[0] || 'session'}.data.json`
+const logger = pino({ level: "silent" });
+global.store = makeInMemoryStore({ logger: logger.child({ stream: "store" }) });
 global.isInit = !fs.existsSync(authFile)
-const { state, saveState } = useSingleFileAuthState(global.authFile)
+const { state, saveCreds } = await useMultiFileAuthState(`./session`)
+  let { version, isLatest } = await fetchLatestBaileysVersion();
 
 const connectionOptions = {
-  printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'silent' }),
-  browser: ['My-MD by rasel', 'IOS', '4.1.0'], 
-  version: [2, 2204, 13],
+      printQRInTerminal: true,
+      logger: pino({ level: "silent" }),
+      browser: Browsers.macOS("Desktop"),
+      downloadHistory: true,
+      syncFullHistory: true
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
