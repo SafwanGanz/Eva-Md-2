@@ -1,9 +1,16 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 require('./config')
+
 const {
-  useSingleFileAuthState,
-  DisconnectReason
-} = require('@whiskeysockets/baileys')
+	fetchLatestBaileysVersion,
+	makeInMemoryStore,
+	default: Baileys,
+	useMultiFileAuthState,
+	Browsers,
+	jidDecode,
+	DisconnectReason,
+	delay,
+} = require("@whiskeysockets/baileys");
 const { generate } = require('qrcode-terminal')
 const WebSocket = require('ws')
 const path = require('path')
