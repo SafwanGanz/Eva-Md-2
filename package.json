@@ -43,7 +43,7 @@
         "awesome-phonenumber": "^5.9.0",
         "axios": "^1.4.0",
         "cfonts": "^3.2.0",
-        "chalk": "^4.1.2",
+        "chalk": "^5.0.0",
         "cheerio": "^1.0.0-rc.12",
         "cookie": "^0.5.0",
         "crypto": "^1.0.1",
