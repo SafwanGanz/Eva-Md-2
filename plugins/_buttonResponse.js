@@ -1,4 +1,4 @@
-const { proto, generateWAMessage,  areJidsSameUser } = require('@adiwajshing/baileys')
+const { proto, generateWAMessage,  areJidsSameUser } = require('@whiskeysockets/baileys')
 //const util = require('util')
 
 module.exports = {

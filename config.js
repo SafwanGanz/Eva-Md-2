@@ -66,7 +66,7 @@ global.hxz = require('hxz-api')
 global.bts = require('@bochilteam/scraper')
 global.bs = require('@bochilteam/scraper')
 global.bochil = require('@bochilteam/scraper')
-global.baileys = require('@adiwajshing/baileys')
+//global.baileys = require('@whiskeysockets/baileys')
 
 //=========== Sticker WM =============//
 const spack = fs.readFileSync("lib/exif.json")

@@ -2,7 +2,7 @@ const {
     proto,
     generateWAMessage,
     areJidsSameUser
-} = require('@adiwajshing/baileys-md')
+} = require('@whiskeysockets/baileys-md')
 
 module.exports = {
     async all(m, chatUpdate) {

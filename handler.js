@@ -1,4 +1,4 @@
-let { Presence } = require('@adiwajshing/baileys')
+let { Presence } = require('@whiskeysockets/baileys')
 let { performance } = require('perf_hooks')
 const simple = require('./lib/simple')
 const printMessage = require('./lib/print.js')

@@ -3,7 +3,7 @@ require('./config')
 const {
   useSingleFileAuthState,
   DisconnectReason
-} = require('@adiwajshing/baileys')
+} = require('@whiskeysockets/baileys')
 const { generate } = require('qrcode-terminal')
 const WebSocket = require('ws')
 const path = require('path')
