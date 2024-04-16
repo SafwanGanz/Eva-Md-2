@@ -1,4 +1,4 @@
-FROM node:16.6.1-buster
+FROM node:20.12.2-buster
 RUN apt-get update && \
      apt-get install -y \
      neofetch \
